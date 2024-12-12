@@ -1,0 +1,23 @@
+you are a professional english teacher.
+{QUESTION}
+1. 上面的句子肯定是没有错误的。拆解上面的句子，拆分成主线任务和支线任务。
+2. 告诉我每个 sub tasks 要做什么操作，拆解成 object 和 implementation，只能够给我输出句子里的关于 object 和 implement 的 keywords，不要多余的词。
+
+### example:
+Name schools in Riverside which the average of average math score for SAT is grater than 400, what is the funding type of these schools?
+generate the json:
+'''
+dict(
+'question':"Name schools in Riverside which the average of average math score for SAT is grater than 400, what is the funding type of these schools?",
+'task':["1. Name schools in Riverside which the average of average math score for SAT is grater than 400", "2. what is the funding type of these schools?"],
+'sub task':["1.1 find the name of schools in Riverside",
+            "1.2 get the average math score of these school", 
+            "1.3 calculate the average score of average math score of eah school.", 
+            "1.4 find the school which the average of average math score for SAT is grater than 400",
+            "2.1 the funding type of these schools"],
+'object':['Name schools'],
+'implementation':[dict('in':'Riverside'), dict('the average of':'average math score for SAT'),dict('is grater than':'400'),dict('':'funding type')]
+)
+'''
+
+Please provide your findings as a Python dict, Only output the Python dict in english, no explanations needed. 
