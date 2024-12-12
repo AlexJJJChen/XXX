@@ -40,8 +40,8 @@ from tqdm import tqdm
 # template = get_template(template_type, tokenizer)
 # seed_everything(42)
 from langchain_openai import AzureChatOpenAI
-os.environ["AZURE_OPENAI_ENDPOINT"] = "https://nl2sqltesting.openai.azure.com"
-os.environ["AZURE_OPENAI_API_KEY"] = "8nrIKBmVgo9BLcO16VMYggZFMe3vm1Vq6KXyRCi3rxWEIcGrI0DIJQQJ99ALACYeBjFXJ3w3AAABACOG3XeF" 
+# os.environ["AZURE_OPENAI_ENDPOINT"] = "https://nl2sqltesting.openai.azure.com"
+# os.environ["AZURE_OPENAI_API_KEY"] = "8nrIKBmVgo9BLcO16VMYggZFMe3vm1Vq6KXyRCi3rxWEIcGrI0DIJQQJ99ALACYeBjFXJ3w3AAABACOG3XeF" 
 llm = AzureChatOpenAI(
     azure_deployment="gpt-4o",  
     api_version="2024-08-01-preview"
