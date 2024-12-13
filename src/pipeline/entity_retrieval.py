@@ -30,9 +30,9 @@ os.environ['TORCH_USE_CUDA_DSA'] = '1'
 device = torch.device("cuda:3")
 
 from pathlib import Path
-EMBEDDINF_ROOT_PATH = Path(os.getenv("EMBEDDING_MODEL"))
+EMBEDDINF_ROOT_PATH = os.getenv("EMBEDDING_MODEL")
 # 加载模型并指定单个 GPU
-EMBEDDING_FUNCTION = SentenceTransformer("/project/chenjian/nl2sql/CHESS-main/stella_en_400M_v5", trust_remote_code=True).cuda()
+EMBEDDING_FUNCTION = SentenceTransformer(EMBEDDINF_ROOT_PATH, trust_remote_code=True).cuda()
 
 @node_decorator(check_schema_status=False)
 def entity_retrieval(task: Any, tentative_schema: Dict[str, Any], execution_history: List[Dict[str, Any]]) -> Dict[str, Any]:
