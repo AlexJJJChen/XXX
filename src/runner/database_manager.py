@@ -25,8 +25,8 @@ os.environ['CUDA_VISIBLE_DEVICES']='3'
 
 from pathlib import Path
 load_dotenv(override=True)
-EMBEDDINF_ROOT_PATH = Path(os.getenv("EMBEDDING_MODEL"))
-EMBEDDING_FUNCTION = HuggingFaceEmbeddings(model_name="/project/chenjian/nl2sql/CHESS-main/stella_en_400M_v5")#, model_kwargs = {'device': 'cuda:2'})
+EMBEDDINF_ROOT_PATH = os.getenv("EMBEDDING_MODEL")
+EMBEDDING_FUNCTION = HuggingFaceEmbeddings(model_name=EMBEDDINF_ROOT_PATH,model_kwargs = {"trust_remote_code":True})
 
 load_dotenv(override=True)
 DB_ROOT_PATH = Path(os.getenv("DB_ROOT_PATH"))
