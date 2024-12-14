@@ -50,3 +50,5 @@ for json_data in json_data_list:
     score["revision"]["accuracy"]=score["revision"]["correct"]/score["revision"]["total"]
 
 print(score)
+with open("final_result.json", 'w', encoding='utf-8') as f:
+    json.dump(score, f, ensure_ascii=False, indent=4)
